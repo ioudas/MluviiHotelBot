@@ -1,5 +1,4 @@
-﻿using AdaptiveCards;
-using Microsoft.Bot.Builder;
+﻿using Microsoft.Bot.Builder;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
