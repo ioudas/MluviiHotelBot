@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using BasicBot.Dialogs.CheckIn;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
@@ -60,6 +61,8 @@ namespace Microsoft.BotBuilderSamples
 
             Dialogs = new DialogSet(_dialogStateAccessor);
             Dialogs.Add(new GreetingDialog(_greetingStateAccessor, loggerFactory));
+            Dialogs.Add(new CheckInDialog());
+
         }
 
         private DialogSet Dialogs { get; set; }
@@ -180,7 +183,7 @@ namespace Microsoft.BotBuilderSamples
                             switch (topIntent)
                             {
                                 case GreetingIntent:
-                                    await dc.BeginDialogAsync(nameof(GreetingDialog));
+                                    await dc.BeginDialogAsync(nameof(CheckInDialog));
                                     break;
 
                                 case NoneIntent:
