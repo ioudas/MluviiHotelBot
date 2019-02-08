@@ -1,0 +1,61 @@
+{
+  "name": "MluviiHotelBot",
+  "padlock": "OeONFh7shO+svErc33P+9A==!iWqOiB8bukWxj07SGOTNgcwo0hCvpkJPyQFcol5QhtgrAggKgUOZsqL1XHvrsXGV",
+  "version": "2.0",
+  "services": [
+    {
+      "tenantId": "9b1ebd09-9c27-4909-a319-f58ac13bf22e",
+      "subscriptionId": "815153b0-4889-4f0e-bf7b-65aa09a7e890",
+      "resourceGroup": "ioudasresourcegroup",
+      "serviceName": "MluviiHotelBot",
+      "type": "abs",
+      "name": "MluviiHotelBot",
+      "id": "1"
+    },
+    {
+      "connectionString": "LXMfUPqypCE3dGYOKrD1Zg==!WXKJCGFM4XIk+D4itWwHMuzZEwj9lhYEcZStrYaQo5UIOX2BpPJvhgCa/06dRNA5iXXhw3DvwlF4vIcZrgSFygBlf4b+IiCBfMDitfmxoj3zMbJaH407Umga3bjduVVcZ+UfGPwKrQ1rbBU/VFxx+i+Khi+lmuS9pigZIJlkiIb1aaXbEEhhBpLqHvIC+8kzze0RntZiSC3DhAdagLNb9vVXPgnEabm3MyKx18MB728=",
+      "tenantId": "9b1ebd09-9c27-4909-a319-f58ac13bf22e",
+      "subscriptionId": "815153b0-4889-4f0e-bf7b-65aa09a7e890",
+      "resourceGroup": "ioudasresourcegroup",
+      "serviceName": "mluviihotelbotstorage",
+      "type": "blob",
+      "id": "2"
+    },
+    {
+      "appId": "",
+      "appPassword": "",
+      "endpoint": "http://localhost:3978/api/messages",
+      "type": "endpoint",
+      "name": "development",
+      "id": "3"
+    },
+    {
+      "appId": "248f628e-10cf-420b-8ad2-c8a49801c3bb",
+      "appPassword": "rgJH7W82Gm6IhhzFBzSp/Q==!xDXKhZd32w1Fs4FsI/u8b78e7R8b7g+KEDWOdUVuvjI=",
+      "endpoint": "https://mluviihotelbot.azurewebsites.net/api/messages",
+      "type": "endpoint",
+      "name": "production",
+      "id": "4"
+    },
+    {
+      "instrumentationKey": "VULRZ7RktEYFXlSON9ROxw==!oI1SP6hbg0l23eFiWZNSXtDLVJyHGcJ7NS1/UNequY4NpY7GOqRi/0BMo8ylpDqz",
+      "applicationId": "ceece117-e699-4b59-9468-1e024cec4676",
+      "apiKeys": {},
+      "tenantId": "9b1ebd09-9c27-4909-a319-f58ac13bf22e",
+      "subscriptionId": "815153b0-4889-4f0e-bf7b-65aa09a7e890",
+      "resourceGroup": "ioudasresourcegroup",
+      "serviceName": "MluviiHotelBotc565bk",
+      "type": "appInsights",
+      "id": "5"
+    },
+    {
+      "appId": "4c43b937-a390-443c-ad5d-bf68eee67e73",
+      "authoringKey": "jmjs+zivtAzz3UsPcEXkBQ==!6ryWed9bv/X1p+8cZ1p5tZyPIf8u+k2CUh6O+Y59P+IX7ySBzJcJpQmG30AqamX/",
+      "version": "0.1",
+      "region": "westus",
+      "type": "luis",
+      "name": "BasicBotLuisApplication",
+      "id": "6"
+    }
+  ]
+}
