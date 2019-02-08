@@ -29,7 +29,7 @@ namespace BasicBot.Dialogs.CheckIn
                     DisplayGreetingStateStepAsync,
             };
             AddDialog(new WaterfallDialog(CheckInDialogId, waterfallSteps));
-            AddDialog(new TextPrompt(CardPrompt, ValidateCardId));
+            AddDialog(new TextPrompt(CardPrompt));
         }
 
         private async Task<DialogTurnResult> PromptForCardStepAsync(
@@ -48,6 +48,7 @@ namespace BasicBot.Dialogs.CheckIn
             var act = stepContext.Context.Activity.CreateReply();
             act.ChannelData = data;
             await stepContext.Context.SendActivityAsync(act);
+
             return await stepContext.PromptAsync(CardPrompt, opts);
         }
         private async Task<DialogTurnResult> DisplayGreetingStateStepAsync(
@@ -55,22 +56,6 @@ namespace BasicBot.Dialogs.CheckIn
                                                     CancellationToken cancellationToken)
         {
             return await GreetUser(stepContext);
-        }
-
-        private async Task<bool> ValidateCardId(PromptValidatorContext<string> promptContext, CancellationToken cancellationToken)
-        {
-            // Validate that the user entered a minimum lenght for their name
-            var value = promptContext.Recognized.Value?.Trim() ?? string.Empty;
-            if (value.Length >= CardIdLengthMinValue)
-            {
-                promptContext.Recognized.Value = value;
-                return true;
-            }
-            else
-            {
-                await promptContext.Context.SendActivityAsync($"Card ID needs to be at least `{CardIdLengthMinValue}` characters long.");
-                return false;
-            }
         }
 
         // Helper function to greet user with information in GreetingState.
