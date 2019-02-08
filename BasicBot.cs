@@ -77,7 +77,7 @@ namespace Microsoft.BotBuilderSamples
         {
             var activity = turnContext.Activity;
 
-            if (activity.Attachments != null)
+            if (turnContext.Activity.Text == null)
             {
                 turnContext.Activity.Text = "go on";
             }

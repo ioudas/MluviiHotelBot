@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Bot.Builder;
@@ -17,7 +20,7 @@ namespace BasicBot.Dialogs.CheckIn
 
         // Dialog IDs
         private const string CheckInDialogId = "checkInDialog";
-        
+
         public CheckInDialog()
             : base(nameof(CheckInDialog))
         {
@@ -36,12 +39,13 @@ namespace BasicBot.Dialogs.CheckIn
                                                 WaterfallStepContext stepContext,
                                                 CancellationToken cancellationToken)
         {
-            var opts = new  PromptOptions
+            var kek = stepContext.Result;
+            var opts = new PromptOptions
             {
                 Prompt = new Activity
                 {
                     Type = ActivityTypes.Message,
-                    Text = "Hello, send us Your ID photo, please. Opening prompt...",
+                    Text = "Send us Your ID photo, please. Opening prompt...",
                 },
             };
             var data = JObject.Parse(@"{ ""Activity"": ""ChatbotOpenFileUploadPrompt"" }");
