@@ -77,6 +77,11 @@ namespace Microsoft.BotBuilderSamples
         {
             var activity = turnContext.Activity;
 
+            if (activity.Attachments != null)
+            {
+                turnContext.Activity.Text = "go on";
+            }
+
             // Create a dialog context
             var dc = await Dialogs.CreateContextAsync(turnContext);
 
