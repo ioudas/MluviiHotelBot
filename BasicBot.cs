@@ -174,7 +174,7 @@ namespace Microsoft.BotBuilderSamples
                 var dialogResult = await dc.ContinueDialogAsync();
 
                 // if no one has responded,
-                if (!dc.Context.Responded)
+                if (dc.Context.Responded)
                 {
                     // examine results from active dialog
                     switch (dialogResult.Status)
@@ -190,7 +190,7 @@ namespace Microsoft.BotBuilderSamples
                                 default:
                                     // Help or no intent identified, either way, let's provide some help.
                                     // to the user
-                                    await dc.Context.SendActivityAsync("I didn't understand what you just said to me.");
+                                    await dc.BeginDialogAsync(nameof(CheckInDialog));
                                     break;
                             }
 
