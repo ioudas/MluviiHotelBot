@@ -86,68 +86,8 @@ namespace Microsoft.BotBuilderSamples
             var dc = await Dialogs.CreateContextAsync(turnContext);
 
 
-            //var card = new HeroCard
-            //{
-            //    Images = new[]
-            //    {
-            //        new CardImage("https://thenypost.files.wordpress.com/2018/05/c6ak1r.jpg?quality=90&strip=all&w=618&h=410&crop=1"){
-            //            Tap = new CardAction
-            //            {
-            //                Type = ActionTypes.MessageBack,
-            //                Value = "RoomOne"
-            //            }
-            //        },
-            //        new CardImage("https://www.rd.com/wp-content/uploads/2016/06/01-hotel-decorating-cut-the-clutter.jpg"){
-            //            Tap = new CardAction
-            //            {
-            //                Type = ActionTypes.MessageBack,
-            //                Value = "RoomTwo"
-            //            }
-            //        },
-            //        new CardImage("https://media.cntraveler.com/photos/56799015c2ebbef23e7d927b/master/pass/Hotelroom-Alamy.jpg"){
-            //            Tap = new CardAction
-            //            {
-            //                Type = ActionTypes.MessageBack,
-            //                Value = "RoomThree"
-            //            }
-            //        },
-            //    },
-
-            //};
-            //var reply = turnContext.Activity.CreateReply();
-            //reply.Attachments = new List<Attachment>() { card.ToAttachment() };
-
-            var carousel = MessageFactory.Carousel(
-    new Attachment[]
-    {
-        new HeroCard(
-            title: "title1",
-            images: new CardImage[] { new CardImage(url: "https://thenypost.files.wordpress.com/2018/05/c6ak1r.jpg?quality=90&strip=all&w=618&h=410&crop=1") },
-            buttons: new CardAction[]
-            {
-                new CardAction(title: "button1", type: ActionTypes.ImBack, value: "room1")
-            })
-        .ToAttachment(),
-        new HeroCard(
-            title: "title2",
-            images: new CardImage[] { new CardImage(url: "https://www.rd.com/wp-content/uploads/2016/06/01-hotel-decorating-cut-the-clutter.jpg") },
-            buttons: new CardAction[]
-            {
-                new CardAction(title: "button2", type: ActionTypes.ImBack, value: "room2")
-            })
-        .ToAttachment(),
-        new HeroCard(
-            title: "title3",
-            images: new CardImage[] { new CardImage(url: "https://media.cntraveler.com/photos/56799015c2ebbef23e7d927b/master/pass/Hotelroom-Alamy.jpg") },
-            buttons: new CardAction[]
-            {
-                new CardAction(title: "button3", type: ActionTypes.ImBack, value: "room3")
-            })
-        .ToAttachment()
-    });
-
-            await turnContext.SendActivityAsync(carousel, cancellationToken);
-
+            var aaa = turnContext.Activity.CreateReply();
+            await turnContext.SendActivityAsync(aaa, cancellationToken);
 
 
             if (activity.Type == ActivityTypes.Message)
@@ -226,9 +166,36 @@ namespace Microsoft.BotBuilderSamples
                         // To learn more about Adaptive Cards, see https://aka.ms/msbot-adaptivecards for more details.
                         if (member.Id != activity.Recipient.Id)
                         {
-                            var welcomeCard = CreateAdaptiveCardAttachment();
-                            var response = CreateResponse(activity, welcomeCard);
-                            await dc.Context.SendActivityAsync(response);
+                            var carousel = MessageFactory.Carousel(
+                new Attachment[]
+                {
+                    new HeroCard(
+                        title: "title1",
+                        images: new CardImage[] { new CardImage(url: "https://thenypost.files.wordpress.com/2018/05/c6ak1r.jpg?quality=90&strip=all&w=618&h=410&crop=1") },
+                        buttons: new CardAction[]
+                        {
+                            new CardAction(title: "button1", type: ActionTypes.ImBack, value: "room1")
+                        })
+                    .ToAttachment(),
+                    new HeroCard(
+                        title: "title2",
+                        images: new CardImage[] { new CardImage(url: "https://www.rd.com/wp-content/uploads/2016/06/01-hotel-decorating-cut-the-clutter.jpg") },
+                        buttons: new CardAction[]
+                        {
+                            new CardAction(title: "button2", type: ActionTypes.ImBack, value: "room2")
+                        })
+                    .ToAttachment(),
+                    new HeroCard(
+                        title: "title3",
+                        images: new CardImage[] { new CardImage(url: "https://media.cntraveler.com/photos/56799015c2ebbef23e7d927b/master/pass/Hotelroom-Alamy.jpg") },
+                        buttons: new CardAction[]
+                        {
+                            new CardAction(title: "button3", type: ActionTypes.ImBack, value: "room3")
+                        })
+                    .ToAttachment()
+                });
+
+                            await turnContext.SendActivityAsync(carousel, cancellationToken);
                         }
                     }
                 }
