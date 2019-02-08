@@ -1,0 +1,12 @@
+C:\git\MluviiHotelBot\bin\Debug\netcoreapp2.0\MluviiHotelBot.bot
+C:\git\MluviiHotelBot\bin\Debug\netcoreapp2.0\BasicBot.deps.json
+C:\git\MluviiHotelBot\bin\Debug\netcoreapp2.0\BasicBot.runtimeconfig.json
+C:\git\MluviiHotelBot\bin\Debug\netcoreapp2.0\BasicBot.runtimeconfig.dev.json
+C:\git\MluviiHotelBot\bin\Debug\netcoreapp2.0\BasicBot.dll
+C:\git\MluviiHotelBot\bin\Debug\netcoreapp2.0\BasicBot.pdb
+C:\git\MluviiHotelBot\obj\Debug\netcoreapp2.0\BasicBot.csprojAssemblyReference.cache
+C:\git\MluviiHotelBot\obj\Debug\netcoreapp2.0\BasicBot.csproj.CoreCompileInputs.cache
+C:\git\MluviiHotelBot\obj\Debug\netcoreapp2.0\BasicBot.AssemblyInfoInputs.cache
+C:\git\MluviiHotelBot\obj\Debug\netcoreapp2.0\BasicBot.AssemblyInfo.cs
+C:\git\MluviiHotelBot\obj\Debug\netcoreapp2.0\BasicBot.dll
+C:\git\MluviiHotelBot\obj\Debug\netcoreapp2.0\BasicBot.pdb
